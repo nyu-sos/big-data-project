@@ -9,5 +9,5 @@ brew install wget
 
 ### Download Data File
 ``` shell
-./download.sh
+./scripts/download.sh
 ```
