@@ -1,6 +1,6 @@
 # Big Data Project - 311
 
-## Requiements
+## Requirements
 
 ### Tools
 ``` shell
