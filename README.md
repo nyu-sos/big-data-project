@@ -11,3 +11,8 @@ brew install wget
 ``` shell
 ./scripts/download.sh
 ```
+## Run
+note: download data file before running anything
+``` shell
+./main.sh
+```
