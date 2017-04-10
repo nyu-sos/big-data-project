@@ -2,9 +2,9 @@
 
 projectDir="project/"
 ./scripts/setup-env.sh
-hfs -put ./data/311.csv sos-311.csv
+/usr/bin/hadoop fs -put ./data/311.csv sos-311.csv
 ./scripts/split.sh
-lines=$(hfs -ls -d $projectDir/Agency-*.csv | awk '{print $8}')
+lines=$(/usr/bin/hadoop fs -ls -d $projectDir/Agency-*.csv | awk '{print $8}')
 for file in $lines; do
-    hfs -getmerge $file $file
+    /usr/bin/hadoop fs -getmerge $file $file
 done
