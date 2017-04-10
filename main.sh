@@ -6,5 +6,6 @@ projectDir="project/"
 ./scripts/split.sh
 lines=$(/usr/bin/hadoop fs -ls -d $projectDir/Agency-*.csv | awk '{print $8}')
 for file in $lines; do
-    /usr/bin/hadoop fs -getmerge $file $file
+    /usr/bin/hadoop fs -getmerge $file data/$file
 done
+mv data/$projectDir/Agency-*.csv data/Agency/
