@@ -9,3 +9,4 @@ for file in $lines; do
     /usr/bin/hadoop fs -getmerge $file data/$file
 done
 mv data/$projectDir/Agency-*.csv data/Agency/
+rm -r data/$projectDir
