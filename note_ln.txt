@@ -1,0 +1,60 @@
+# Note of thoughts for date cleansing
+
+For all categorial columns, need to find all possible values and their counts, to find outliners.
+For all categorial columns, marked *.
+============================================================================
+Attr: Comment
+-------------------------------------
+Unique Key:  Are all unique?
+Created Date: invalid date like Feb 30, invalid time like 08:61 am
+Closed Date: similar to Created Date.Is closed date later than created date?
+Agency: *
+Agency Name: should be redundent of Agency, so should be related with agency
+Complaint Type: *
+Descriptor: *
+Location Type: *
+Incident Zip: *
+Incident Address: 
+Street Name: 
+Cross Street 1: 
+Cross Street 2: 
+Intersection Street 1: 
+Intersection Street 2: 
+Address Type: *
+City: *
+Landmark: *
+Facility Type: *
+Status: *
+Due Date: similar to other dates. Is due date bofore closed date?
+Resolution Action Updated Date: similar to other dates
+Community Board: *
+Borough: *
+X Coordinate (State Plane): 
+Y Coordinate (State Plane): 
+Park Facility Name: *
+Park Borough: *
+School Name: *
+School Number:
+School Region: 
+School Code: *
+School Phone Number: check if it is valid phone number
+School Address: 
+School City: *
+School State: *
+School Zip: *
+School Not Found: School not found is Y but has address and other infomation?
+School or Citywide Complaint: 
+Vehicle Type: *
+Taxi Company Borough: *
+Taxi Pick Up Location: 
+Bridge Highway Name: *
+Bridge Highway Direction: *
+Road Ramp: *
+Bridge Highway Segment: 
+Garage Lot Name: *
+Ferry Direction: *
+Ferry Terminal Name: *
+Latitude: 
+Longitude: together with latitude, decide whether in NYC
+Location: is it same with latitude and longitude?
+
