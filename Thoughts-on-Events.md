@@ -43,6 +43,6 @@ Catagory as `Catagory`
 ### Inter `Catagory`
 |#  |Tool  | Name           | =           | 
 | --| -----| ------------- |-------------| 
-|6. |?     |**Correlation** |= correlation(time of Irregularity per Agency ) 
+|6. |?     |**Correlation** |= correlation(time of Irregularity per `Catagory` ) 
 |7. |?     |Causation |= if-time-latency(Correlation)|
 
