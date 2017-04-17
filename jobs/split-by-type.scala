@@ -16,7 +16,7 @@ val agencies = df.select("Agency").distinct.collect.flatMap(_.toSeq);
 val byAgencyDFs = agencies.map(
     agency => ( agency ->
         df.where($"Agency" <=> agency)
-        .write.format("csv").save(s"project/Agency-$agency.csv")
+        .write.format("csv").option("header", "true").save(s"project/Agency-$agency.csv")
     )
 ).toMap;
 
