@@ -49,14 +49,17 @@ Baseline model is just: Use `Event Frequency` as Target feature, `Agency` as Cat
 
 ## Explaination on `Catagory` and `Feature` and `Time` and `Location`
 ### `Catagory`
-Catagory must segment dataframe well (e.g. Agency segments possible different data schemes)
+Catagory must segment dataframe well 
+
+e.g. 
+`Agency` segments very likely different *data schemes*
 
 ### `Feature`
 For `Inter-Catagory`, `Feature` must be commenly **effective** on both `Catagory`
 
 **effective** means cleaned and dense
 
-
+e.g.
 `Event Frequency` is natually **effective**
 
 ### `Location`
