@@ -2,7 +2,8 @@
 data/*
 !data/header.csv
 !data/Agency-Summary
+!data/catagorial-summary.log
 
+# R
 .Rhistory
-
 .RData
