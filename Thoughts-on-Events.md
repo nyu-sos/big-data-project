@@ -1,5 +1,8 @@
 
+
+
 ### Per Agency
+0. Frequency = count / (month, week, day, hour, min, second)
 1. Direct Plot =  Frequency~t
 2. Trend = Linear regress (Direct Plot )
 3. Seasonality = Sine Cosine regress (Direct Plot )
