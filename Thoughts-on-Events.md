@@ -31,18 +31,18 @@ Catagory as `Catagory`
 
 ## Process
 ### Per `Catagory`
-|#  |Tool  | Name           | =           | 
-| --| -----| ------------- |-------------| 
-|0. |Spark |Stats |= cumulative/mean `Feature` / (month, week, day, hour, min, second)|
-|1. |R.    |**Direct Plot** |=  Stats~t|
-|2. |R.    |**Trend** |= Linear regress (Direct Plot )|
-|3. |R.    |Seasonality |= Sine Cosine regress (Direct Plot )|
-|4. |R.    |Noise |= Direct Plot/ (Trend * Seasonality)|
-|5. |?     |**Irregularity** |= outliers in Noise|
+|#  |Tool  | Name           | =           | Problem |
+| --| -----| ------------- |-------------|  --------| 
+|0. |Spark |Stats |= cumulative/mean `Feature` / (month, week, day, hour, min, second)|Aggrigation of Big Data|
+|1. |R.    |**Direct Plot** |=  Stats~t|Plot|
+|2. |R.    |**Trend** |= Linear regress (Direct Plot )|Time Series Analysis|
+|3. |R.    |Seasonality |= Sine Cosine regress (Direct Plot )|Time Series Analysis|
+|4. |R.    |Noise |= Direct Plot/ (Trend * Seasonality)|Time Series Analysis|
+|5. |?     |**Irregularity** |= outliers in Noise|Statistics|
 
 ### Inter `Catagory`
-|#  |Tool  | Name           | =           | 
-| --| -----| ------------- |-------------| 
-|6. |?     |**Correlation** |= correlation(time of Irregularity per `Catagory` ) 
-|7. |?     |Causation |= if-time-latency(Correlation)|
+|#  |Tool  | Name           | =           | Problem |
+| --| -----| -------------  |-------------| --------| 
+|6. |?     |**Correlation** |= correlation(time and space-if-available of Irregularity per `Catagory` ) |unsupervised clustering|
+|7. |?     |Causation |= if-time-latency(Correlation)|??|
 
