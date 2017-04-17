@@ -48,6 +48,20 @@ def is_date_valid(s):
         else:
             return False
 
+def is_latitude_valid(l):
+    try:
+        l = float(l)
+        return -75< l < -73
+    except:
+        return False
+
+def is_longitude_valid(l):
+    try:
+        l = float(l)
+        return 40< l < 42
+    except:
+        return False
+
 if __name__ == "__main__":
     sc = SparkContext()
     rdd = sc.textFile("sos-311.csv")
@@ -166,12 +180,12 @@ if __name__ == "__main__":
     rdd1.saveAsTextFile('non'+str(i))
 
     i = 49
-    cleaner = cleaner_factory(is_null, lambda x : return True, "CORDINATE", "Latitude")
+    cleaner = cleaner_factory(is_null, is_latitude_valid, "CORDINATE", "Latitude")
     rdd1 = rdd.map(lambda x: cleaner(x[i]))
     rdd1.saveAsTextFile('non'+str(i))
 
     i = 50
-    cleaner = cleaner_factory(is_null, lambda x : return True, "CORDINATE", "Longtitude")
+    cleaner = cleaner_factory(is_null, is_longitude_valid, "CORDINATE", "Longtitude")
     rdd1 = rdd.map(lambda x: cleaner(x[i]))
     rdd1.saveAsTextFile('non'+str(i))
 
