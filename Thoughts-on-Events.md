@@ -34,7 +34,7 @@ Baseline model is just: Use `Event Frequency` as Target feature, `Agency` as Cat
 ### Inner-`Catagory`
 |#  |Tool  | Name           | =           | Problem |
 | --| -----| ------------- |-------------|  --------| 
-|0. |Spark |Stats |= cumulative-or-meadian `Feature` / (period)|Aggrigation of Big Data|
+|0. |Spark |Stats |= _cumulative-or-meadian_ `Feature` / (_period_)|Aggrigation of Big Data|
 |1. |R.    |**Direct Plot** |=  Stats~t|Plot|
 |2. |R.    |**Trend** |= Linear regress (Direct Plot )|Time Series Analysis|
 |3. |R.    |Seasonality |= Sine Cosine regress (Direct Plot )|Time Series Analysis|
@@ -44,7 +44,7 @@ Baseline model is just: Use `Event Frequency` as Target feature, `Agency` as Cat
 ### Inter-`Catagory`
 |#  |Tool  | Name           | =           | Problem |
 | --| -----| -------------  |-------------| --------| 
-|6. |?     |**Correlation** |= correlation(time and space-if-available of Irregularity per `Catagory` ) |unsupervised clustering|
+|6. |?     |**Correlation** |= correlation(time _and space-if-available_ of Irregularity per `Catagory` ) |unsupervised clustering|
 |7. |?     |Causation |= if-time-latency(Correlation)|??|
 
 ## Explaination on `Catagory` and `Feature` and `Time` and `Location`
