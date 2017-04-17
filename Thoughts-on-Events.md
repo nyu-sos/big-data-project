@@ -44,7 +44,7 @@ Baseline model is just: Use `Event Frequency` as Target feature, `Agency` as Cat
 ### Inter-`Catagory`
 |#  |Tool  | Name           | =           | Problem |
 | --| -----| -------------  |-------------| --------| 
-|6. |?     |**Correlation** |= correlation(time _and space-if-available_ of Irregularity per `Catagory` ) |unsupervised clustering|
+|6. |?     |**Correlation** |= correlation(time _and space-if-available_ of Irregularity per `Catagory` ) |unsupervised learning|
 |7. |?     |Causation |= if-time-latency(Correlation)|??|
 
 ## Explaination on `Catagory` and `Feature` and `Time` and `Location`
@@ -59,8 +59,12 @@ For `Inter-Catagory`, `Feature` must be commenly **effective** on both `Catagory
 
 **effective** means cleaned and dense
 
+#### Unsupervised Learning 
+find correlation between events: clustering
+predict                        : regression
+
 e.g.
-`Event Frequency` is natually **effective**
+`Event Frequency` is natually **effective** and it should be a clustering problem
 
 ### `Location`
 needs to be cleaned
