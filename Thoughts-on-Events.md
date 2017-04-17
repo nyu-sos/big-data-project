@@ -1,6 +1,10 @@
 
-## After data cleanning
+# Interagency data relation
 
+## Propose
+Use Frequency as Target feature
+
+## Process
 ### Per Agency
 0. Frequency = count / (month, week, day, hour, min, second)
 1. Direct Plot =  Frequency~t
@@ -13,6 +17,5 @@
 6. Correlation = correlation (time of Irregularity per Agency ) (edited)
 7. Causation = if time latency (Correlation)
 
-
-## Problem
+## Limit
 Does not count any spatial data or feature other than temporal 
