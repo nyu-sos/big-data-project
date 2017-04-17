@@ -64,3 +64,6 @@ e.g.
 
 ### `Location`
 needs to be cleaned
+
+### `Time`
+Period of `ssecond` even `minute` is not necessary on small datasets. 
