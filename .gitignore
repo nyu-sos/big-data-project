@@ -3,6 +3,7 @@ data/*
 !data/header.csv
 !data/Agency-Summary
 !data/catagorial-summary.log
+!data/count-by-second.csv
 
 # R
 .Rhistory
