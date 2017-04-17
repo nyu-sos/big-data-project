@@ -2,13 +2,13 @@
 # Interagency data relation
 
 ## Propose
-Use Frequency as Target feature,
+Use Event Frequency as Target feature,
 
 Catagory as Agency
 
 ## Process
 ### Per Agency
-0. Frequency = count / (month, week, day, hour, min, second)
+0. Frequency = event count / (month, week, day, hour, min, second)
 1. **Direct Plot** =  Frequency~t
 2. **Trend** = Linear regress (Direct Plot )
 3. Seasonality = Sine Cosine regress (Direct Plot )
@@ -30,7 +30,7 @@ Use `Feature` as Target feature,
 Catagory as `Catagory`
 
 ## Process
-### Per `Catagory`
+### Inner-`Catagory`
 |#  |Tool  | Name           | =           | Problem |
 | --| -----| ------------- |-------------|  --------| 
 |0. |Spark |Stats |= cumulative-or-meadian `Feature` / (period)|Aggrigation of Big Data|
@@ -40,9 +40,23 @@ Catagory as `Catagory`
 |4. |R.    |Noise |= Direct Plot/ (Trend * Seasonality)|Time Series Analysis|
 |5. |?     |**Irregularity** |= outliers in Noise|Statistics|
 
-### Inter `Catagory`
+### Inter-`Catagory`
 |#  |Tool  | Name           | =           | Problem |
 | --| -----| -------------  |-------------| --------| 
 |6. |?     |**Correlation** |= correlation(time and space-if-available of Irregularity per `Catagory` ) |unsupervised clustering|
 |7. |?     |Causation |= if-time-latency(Correlation)|??|
 
+## Explaination on `Catagory` and `Feature` and `Time` and `Location`
+### `Catagory`
+Catagory must segment dataframe well (e.g. Agency segments possible different data schemes)
+
+### `Feature`
+For `Inter-Catagory`, `Feature` must be commenly **effective** on both `Catagory`
+
+**effective** means cleaned and dense
+
+
+`Event Frequency` is natually **effective**
+
+### `Location`
+needs to be cleaned
