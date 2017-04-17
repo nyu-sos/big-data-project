@@ -59,12 +59,16 @@ For `Inter-Catagory`, `Feature` must be commenly **effective** on both `Catagory
 
 **effective** means cleaned and dense
 
+e.g.
+`Event Frequency` is natually **effective** and it should be a clustering problem
+
 #### Unsupervised Learning 
 find correlation between events: clustering
 predict                        : regression
 
-e.g.
-`Event Frequency` is natually **effective** and it should be a clustering problem
+#### Problem
+What algorithm?
+k-means: what k?
 
 ### `Location`
 needs to be cleaned
