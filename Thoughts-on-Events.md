@@ -35,17 +35,17 @@ Baseline model is just: Use `Event Frequency` as Target feature, `Agency` as Cat
 |#  |Tool  | Name           | =           | Problem |
 | --| -----| ------------- |-------------|  --------| 
 |0. |Spark |Stats |= _cumulative-or-meadian_ `Feature` / (_period_)|Aggrigation of Big Data|
-|1. |R.    |**Direct Plot** |=  Stats~t|Plot|
-|2. |R.    |**Trend** |= Linear regress (Direct Plot )|Time Series Analysis|
-|3. |R.    |Seasonality |= Sine Cosine regress (Direct Plot )|Time Series Analysis|
-|4. |R.    |Noise |= Direct Plot/ (Trend * Seasonality)|Time Series Analysis|
-|5. |?     |**Irregularity** |= outliers in Noise|Statistics|
+|1. |R    |**Direct Plot** |=  Stats~t|Plot|
+|2. |R    |**Trend** |= Linear regress (Direct Plot )|Time Series Analysis|
+|3. |R    |Seasonality |= Sine Cosine regress (Direct Plot )|Time Series Analysis|
+|4. |R    |Noise |= Direct Plot/ (Trend * Seasonality)|Time Series Analysis|
+|5. |R/Python|**Irregularity** |= outliers in Noise|Statistics|
 
 ### Inter-`Catagory`
 |#  |Tool  | Name           | =           | Problem |
 | --| -----| -------------  |-------------| --------| 
-|6. |?     |**Correlation** |= correlation(time _and space-if-available_ of Irregularity per `Catagory` ) |unsupervised learning|
-|7. |?     |Causation |= if-time-latency(Correlation)|??|
+|6. |sklearn/Karas     |**Correlation** |= correlation(time _and space-if-available_ of Irregularity per `Catagory` ) |Unsupervised Learning|
+|7. |Not decided|Causation |= if-time-latency(Correlation)|Not decided|
 
 ## Explaination on `Catagory` and `Feature` and `Time` and `Location`
 ### `Catagory`
