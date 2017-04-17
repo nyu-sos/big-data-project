@@ -1,10 +1,8 @@
 
-# Interagency data relation
+# Baseline/Simplified Version: Interagency data relation
 
 ## Propose
-Use Event Frequency as Target feature,
-
-Catagory as Agency
+Find Event relations according to time
 
 ## Process
 ### Per Agency
@@ -28,6 +26,9 @@ Does not count any spatial data or feature other than temporal
 Use `Feature` as Target feature,
 
 Catagory as `Catagory`
+
+### Declearation
+Baseline model is just: Use `Event Frequency` as Target feature, `Agency` as Catagory
 
 ## Process
 ### Inner-`Catagory`
