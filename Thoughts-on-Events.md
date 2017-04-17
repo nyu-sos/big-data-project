@@ -33,7 +33,7 @@ Catagory as `Catagory`
 ### Per `Catagory`
 |#  |Tool  | Name           | =           | Problem |
 | --| -----| ------------- |-------------|  --------| 
-|0. |Spark |Stats |= cumulative/mean `Feature` / (month, week, day, hour, min, second)|Aggrigation of Big Data|
+|0. |Spark |Stats |= cumulative-or-meadian `Feature` / (period)|Aggrigation of Big Data|
 |1. |R.    |**Direct Plot** |=  Stats~t|Plot|
 |2. |R.    |**Trend** |= Linear regress (Direct Plot )|Time Series Analysis|
 |3. |R.    |Seasonality |= Sine Cosine regress (Direct Plot )|Time Series Analysis|
