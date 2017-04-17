@@ -30,7 +30,7 @@ def is_null(x):
     x = x.strip()
     if len(x)==0:
         return True
-    if x[:2] == 'NA' or x[:3]=='N/A':
+    if x == 'NA' or x=='N/A' or x == "NA's" or x == "NULL" or x == "null":
         return True
     if x == "0 Unspecified" or x == "Unspecified" or x == 'Other':
         return True
