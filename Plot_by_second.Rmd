@@ -1,0 +1,28 @@
+---
+title: "Plot by second"
+output: html_notebook
+---
+
+## requirements
+
+```{r, message=FALSE}
+require(ggplot2) 
+```
+
+## Load
+```{r}
+count.by.second <- read.csv("../data/count-by-second.csv")
+```
+## Preview
+### Head
+```{r}
+count.by.second["Created.Date"] <- as.POSIXct(strptime(count.by.second["Created.Date"], format = "%Y-%m-%d %I:%M:%S %p")) 
+head(count.by.second)
+```
+
+### Plot
+```{r}
+ggplot(count.by.second, aes(Created.Date, n)) + geom_line() +
+  scale_x_datetime() + xlab("") + ylab("Daily Views")
+```
+

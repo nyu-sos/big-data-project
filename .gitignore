@@ -8,3 +8,5 @@ data/*
 # R
 .Rhistory
 .RData
+
+.RDataTmp
