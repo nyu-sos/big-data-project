@@ -8,11 +8,12 @@ output: html_notebook
 ```{r, message=FALSE}
 library(ggplot2) 
 library(plyr)
+library(ggseas)
 ```
 ### Custom function
 ```{r}
 save.and.print <- function (plot.func, file.name, width = 10, height=20){
-  pdf(file.path("../data", file.name), width, height)
+  png(file.path("../data", file.name), width, height)
   p <- plot.func()
   print(p)
   dev.off()
@@ -84,7 +85,7 @@ Complaint.Type.Count <- ddply(sos.only,c("Complaint.Type"),summarize,Freq=length
 Month.Count <- ddply(sos.only,c("Complaint.Type", "Month"),summarize,Freq=length(n))
 Week.Count  <- ddply(sos.only,c("Complaint.Type", "Week"),summarize,Freq=length(n))
 Day.Count   <- ddply(sos.only,c("Complaint.Type", "Day"),summarize,Freq=length(n))
-
+# Complaint.Type.Count[order(Complaint.Type.Count$Freq),] 
 ```
 ### Add Scales
 ```{r}
@@ -117,14 +118,14 @@ for(level in 1:6){
       #scale_linetype_manual(values = c(rep(1, 70), rep(2, 70), rep(3, 70), rep(4, 70), rep(5, 70)))+
       scale_shape_manual(values = rep(1:6,297))+
       scale_x_datetime() + xlab("Week") + ylab("")+
-      theme(legend.position="bottom")
+      theme(legend.position="none",)
     if(level > 1){
       p + facet_grid(Scale ~ ., scales = "free_y") 
     }else{
       p
     }
   }
-  save.and.print(plot.one, paste0("Week.l", level, ".pdf"), width = 15, height=50)
+  save.and.print(plot.one, paste0("Week.l", level, ".png"), width = 3500, height=2500)
   #
   plot.one <- function(){
     p <- ggplot(Month.Count) + 
@@ -133,14 +134,14 @@ for(level in 1:6){
       #scale_linetype_manual(values = c(rep(1, 70), rep(2, 70), rep(3, 70), rep(4, 70), rep(5, 70)))+
       scale_shape_manual(values = rep(1:6,297))+
       scale_x_datetime() + xlab("Month") + ylab("")+
-      theme(legend.position="bottom")
+      theme(legend.position="none")
     if(level > 1){
       p + facet_grid(Scale ~ ., scales = "free_y") 
     }else{
       p
     }
   }
-  save.and.print(plot.one, paste0("Month.l", level, ".pdf"), width = 15, height=50)
+  save.and.print(plot.one, paste0("Month.l", level, ".png"), width = 3500, height=2500)
   #
   plot.one <- function(){
     p <- ggplot(Day.Count) + 
@@ -149,14 +150,14 @@ for(level in 1:6){
       #scale_linetype_manual(values = c(rep(1, 70), rep(2, 70), rep(3, 70), rep(4, 70), rep(5, 70)))+
       scale_shape_manual(values = rep(1:6,297))+
       scale_x_datetime() + xlab("Day") + ylab("")+
-      theme(legend.position="bottom")
+      theme(legend.position="none")
     if(level > 1){
       p + facet_grid(Scale ~ ., scales = "free_y") 
     }else{
       p
     }
   }
-  save.and.print(plot.one, paste0("Day.l", level, ".pdf"), width = 15, height=50)
+  save.and.print(plot.one, paste0("Day.l", level, ".png"), width = 3500, height=2500)
 }
 
 
