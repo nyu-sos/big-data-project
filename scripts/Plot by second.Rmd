@@ -108,7 +108,7 @@ set.scale<- function(level=3){
 
 
 ### Plot
-```{r}
+```{r, message=FALSE}
 for(level in 1:6){
   set.scale(level)
   plot.one <- function(){
@@ -161,6 +161,22 @@ for(level in 1:6){
 }
 
 
+```
+
+## Remove Seaonality
+```{r}
+#254                    Street Light Condition  706492
+#138                                   HEATING  887869
+#189                       Noise - Residential 1178634
+Heating <- Week.Count[Week.Count$Complaint.Type=="Water System",]
+a.ts<-ts(Heating$Freq, frequency = 52,start = 2010)
+plot(decompose(a.ts, type = "multiplicative", filter = NULL))
+#Month.ts <- Month.Count[complete.cases(Month.Count),]
+#Month.ts$Date <- as.Date(Month.ts$Month)
+#Month.ts<-Month.ts[order(Month.ts$Date, na.last = NA),]
+#ggsdc(Month.Count, aes(x = Date, y = Freq, color = Complaint.Type),
+#      method = "stl", s.window = 7, frequency = 12) +
+#   geom_line()
 ```
 
 
