@@ -10,27 +10,63 @@ require(ggplot2)
 ```
 
 ## Load
+### From csv
 ```{r}
-count.by.second <- read.csv("../data/count-by-second.csv")
+exists.rdata.sos.only <- file.exists("../data/sos-only.RData")
+if(!exists.rdata.sos.only){
+  # read csv
+  sos.only <- read.csv("../data/sos-only.csv")
+  # data format
+  sos.only$Created.Date <- as.POSIXct(strptime(sos.only$Created.Date, format = "%m/%d/%Y %I:%M:%S %p")) 
+  sos.only$Latitude <- as.double(paste(sos.only$Latitude))
+  sos.only$Longitude <- as.double(paste(sos.only$Longitude))
+  #
+  print("Loaded from csv")
+}
+
 ```
-## Preview
-### Head
+
+### From DS
+
 ```{r}
-count.by.second$Created.Date <- as.POSIXct(strptime(count.by.second$Created.Date, format = "%m/%d/%Y %I:%M:%S %p")) 
-head(count.by.second)
+if(exists.rdata.sos.only){
+  load("../data/sos-only.RData")
+  print("Loaded from RData")
+}
 ```
+
 ### Aggregate
 ```{r}
-count.by.second$Month <- as.POSIXct(cut(count.by.second$Created.Date,
-  breaks = "month"))
-count.by.second$Week <- as.POSIXct(cut(count.by.second$Created.Date,
-  breaks = "week",
-  start.on.monday = FALSE))
+if(!exists.rdata.sos.only){
+  sos.only$Month <- as.POSIXct(cut(sos.only$Created.Date,
+    breaks = "month"))
+  
+  sos.only$Week <- as.POSIXct(cut(sos.only$Created.Date,
+    breaks = "week",
+    start.on.monday = FALSE))
+  
+  sos.only$Day <- as.POSIXct(cut(sos.only$Created.Date,
+    breaks = "day"))
+  
+  sos.only$Hour <- as.POSIXct(cut(sos.only$Created.Date,
+    breaks = "hour"))
+  print("Aggregated to diff metircs")
+}else{
+  print("Skiped Aggregation")
+}
+```
+
+## Preview
+
+### Head
+
+```{r}
+head(sos.only)
 ```
 
 ### Plot
 ```{r}
-ggplot(count.by.second, aes(Week, n)) + 
+ggplot(sos.only, aes(Week, n)) + 
   scale_x_datetime() + xlab("") + ylab("Week")+
   stat_summary(fun.y = sum, # adds up all observations for the week
     geom = "line")
